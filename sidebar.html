@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook Marketplace Listing Automation</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="sidebar-container">
+        <div style="text-align: center;">
+            <img src="icons/icon1.png" alt="Logo" style="width:60%">
+        </div>
+
+        <div id="dropArea" class="drop-area">
+            <p>Drop Excel file here or</p>
+            <div class="file-input-container">
+                <input type="file" id="fileInput" accept=".xlsx" class="hidden">
+                <label for="fileInput" class="file-input-label">Choose Excel File</label>
+                <span id="fileName" class="file-name"></span>
+            </div>
+        </div>
+
+        <button id="processButton" disabled>Start Automation</button>
+        <button id="stopButton">Stop Posting</button>
+
+        <div id="statusSection" class="status-section" style="margin-top: 10px; font-size: 12px; color: #555;">
+            <h3>Status</h3>
+            <div id="statusMessages"></div>
+        </div>
+    </div>
+
+    <script src="./constants.js" defer></script>
+    <script src="./sidebar.js" defer></script>
+</body>
+
+</html>

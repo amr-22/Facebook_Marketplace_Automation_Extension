@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook MarketPlace Listing Sidebar",
+  "version": "1.0",
+  "description": "Upload, parse, and process Excel files client-side from a sidebar.",
+  "icons": {
+    "48": "icons/icon1.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "*://postlogic.remaldev.website/*",
+    "https://www.facebook.com/marketplace/create/vehicle*",
+    "*://*/*"
+  ],
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.facebook.com/*",
+        "*://web.facebook.com/*",
+        "*://facebook.com/*",
+        "*://m.facebook.com/*",
+        "*://postlogic.remaldev.website/*"
+      ],
+      "js": [
+        "content.js",
+        "drop_img.js",
+        "constants.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Excel Data Processor Sidebar"
+  },
+  "externally_connectable": {
+    "matches": [
+      "*://postlogic.remaldev.website/*"
+    ]
+  }
+}
